@@ -1,24 +1,24 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Item from './func1'
+import {ReactFCComponent,ItemDetails} from './func1'
+import Comp from './com';
+import {IProps} from './com';
+import {Comp2} from './com';
 
 function App() {
+  let d:string;
+  const details:ItemDetails = {color:"Red",price:100,midName:"888"}
+
+  const propsObj:IProps = {caption:'Supermarket',id:119};
+  const propsObj1:IProps = {caption:'Zarchania',id:220};
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Comp {...propsObj} ></Comp>
+      <Comp {...propsObj1} ></Comp>
+      <Comp2 {...propsObj1} ></Comp2>
     </div>
   );
 }
